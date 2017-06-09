@@ -6,24 +6,19 @@
                 <span class="sr-only">Toggle navigation</span>
                 Menu <i class="fa fa-bars"></i>
             </button>
-            <a class="navbar-brand" href="index.html">Start Bootstrap</a>
+            <%= link_to 'Blogger', posts_path, class: "navbar-brand" %>
         </div>
 
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav navbar-right">
                 <li>
-                    <a href="index.html">Home</a>
+                    <%= link_to 'Home', posts_path %>
                 </li>
                 <li>
-                    <a href="about.html">About</a>
+                    <%= link_to 'New', new_post_path %>
                 </li>
-                <li>
-                    <a href="post.html">Sample Post</a>
-                </li>
-                <li>
-                    <a href="contact.html">Contact</a>
-                </li>
+            
             </ul>
         </div>
         <!-- /.navbar-collapse -->
