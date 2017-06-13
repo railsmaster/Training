@@ -25,7 +25,7 @@
    <div class="row control-group">
     <div class="form-group col-xs-12 floating-label-form-group controls">
         <label>Content</label>
-        <%= f.text_area :title, class: "form-control", placeholder: "Content"  %>
+        <%= f.text_area :content, class: "form-control", placeholder: "Content"  %>
       <p class="help-block text-danger"></p>
     </div>
   </div>
@@ -43,12 +43,23 @@
           </div>
     </div>
 
-  <% else %>
+  <% elsif action_name == 'edit' %>
 
     <div class="row">
         <div class="form-group col-xs-12">
 
-          <%= link_to 'Show', @post,  class: "btn btn-default"  %> 
+          <%= f.submit :submit, class: "btn btn-default" %>
+          <%= link_to 'Back', posts_path,  class: "btn btn-default"  %>
+
+        </div>
+    </div>
+
+   <% else %>
+
+    <div class="row">
+        <div class="form-group col-xs-12">
+
+          <%= link_to 'Show',post_path, class: "btn btn-default" %>
           <%= link_to 'Back', posts_path,  class: "btn btn-default"  %>
 
         </div>

@@ -7,9 +7,6 @@
                   <h2 class="post-title">
                       <%= post.title %>
                   </h2>
-                  <h3 class="post-subtitle">
-                      <%= post.content %>
-                  </h3>
               <%end%>
             <p class="post-meta">Posted on <%= readable_date(post.created_at) %> | <%= link_to 'Edit', edit_post_path(post) %> | <%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %></p> 
               <hr>
@@ -20,6 +17,10 @@
         <ul class="pager">
             <li class="next">
                 
+
+                <%= paginate @posts %>
+                <%= page_entries_info @posts %>
+                <br>
                 <%= link_to 'New Post →', new_post_path %>
 
             </li>
