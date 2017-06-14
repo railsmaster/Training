@@ -10,14 +10,17 @@
 
     <title>Clean Blog - <%= action_name.capitalize %> Blog</title>
     <%= csrf_meta_tags %>
-
+    <%= favicon_link_tag 'favicon.ico' %>
     <%= stylesheet_link_tag    'application',
 
     'https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic',
     'https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800',
-    
      media: 'all', 'data-turbolinks-track': 'reload' %>                                          <!-- application.css -->
     
+    
+    
+    <link href="<%= asset_path('css/font-awesome.min.css')%>" rel="stylesheet" type="text/css">
+
     <%= stylesheet_link_tag    'theme', media: 'all', 'data-turbolinks-track': 'reload' %>       <!-- theme.css       -->
 
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>               <!-- application.js  -->
@@ -29,6 +32,8 @@
   	<%= render 'shared/navbar' %>
     <%= render 'shared/page_header' %>
 
+  s
+
     <!-- Main Content -->
     <div class="container">
       <center>
@@ -37,6 +42,7 @@
     </div>
 
     <hr>
+
 
     <%= render 'shared/footer' %>
     <%= javascript_include_tag 'theme', 'data-turbolinks-track': 'reload' %>
