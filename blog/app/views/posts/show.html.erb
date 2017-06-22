@@ -1,14 +1,28 @@
 <p id="notice"><%= notice %></p>
 
 <div class="row">
-    <div class="post-preview">		                
-    	<div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">              
-        	<p><%= @post.content %></p>
+    <div class="post-preview">		
 
-        	<%= link_to 'Edit', edit_post_path(@post), class: "btn btn-default"%>
+        <p class="text-justify"><%= @post.content  %></p>
+
+    </div>
+        	<%if user_signed_in? and current_user.id == @post.user_id %>
+        		<%= link_to 'Edit', edit_post_path(@post), class: "btn btn-default"%>
+            <%end%>
             <%= link_to 'Back', posts_path, class: "btn btn-default" %>
 
+        <br>
+        <br>
+        <br>
+
         </div>
+
+
+        <%if user_signed_in?%>
+        	<center> <h1>Comments</h1> </center>
+			<%= render 'comments/form', post: @post %>
+    	<%end%>
+        
     </div>
 </div>
 
